@@ -28,7 +28,7 @@ module.exports = function (config) {
 	config.addPassthroughCopy('images')
 	config.addPassthroughCopy('styles')
 
-	config.addFilter('day', dateString => new Date(dateString).getUTCDay())
+	config.addFilter('day', dateString => new Date(dateString).getUTCDate())
 	config.addFilter(
 		'month',
 		dateString => months[new Date(dateString).getUTCMonth()]
