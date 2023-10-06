@@ -1,0 +1,34 @@
+---
+title: Publications - Practically Causal
+styles:
+	- publications.css
+layout: layouts/base.liquid
+---
+
+<section class="publications">
+	<h1 class="publications_title">Publications</h1>
+	<p class="publications_body">
+		Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+		sed quia consequuntur magni dolores eos qui ratione voluptatem sequi
+		nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+		consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt
+		ut labore et dolore magnam aliquam quaerat voluptatem.
+	</p>
+	<div class="publications_content">
+		<p class="publications_year">{{ cms.publications[0].date | year }}</p>
+		{% for publication in cms.publications %}
+		<a
+			class="publications_publication"
+			href="/publications/{{ publication.slug }}"
+			aria-disabled="true"
+		>
+			<span class="publications_publication-title">{{
+				publication.title
+			}}</span>
+			<span class="publications_publication-preview">{{
+				publication.abstract.html | squeezeTag
+			}}</span>
+		</a>
+		{% endfor %}
+	</div>
+</section>

@@ -16,11 +16,7 @@
 	<hr class="navbar_divider" />
 	<div class="navbar_main">
 		<a class="navbar_logo" href="/"> PCI <span>Lab</span> </a>
-		{% for link in links %} {% if link.url %}
-		<a class="navbar_link" href="{{ link.url }}">
-			{{ link.name }}
-		</a>
-		{% else %}
+		{% for link in links %} {% if link.links %}
 		<div class="navbar_dropdown">
 			<span class="navbar_dropdown-trigger">
 				{{ link.name }}
@@ -29,13 +25,22 @@
 			<div class="navbar_dropdown-container">
 				<div class="navbar_dropdown-content">
 					{% for sublink in link.links %}
-					<a class="navbar_dropdown-link" href="{{ sublink.url }}">
+					<a class="navbar_dropdown-link" href="/#learn-{{ sublink.slug }}">
 						{{ sublink.name }}
 					</a>
 					{% endfor %}
 				</div>
 			</div>
 		</div>
+		{% else %}
+		<a
+			class="navbar_link"
+			href="/{% if link.slug == 'events' or link.slug == 'publications' %}{% if page.fileSlug == 'events' or page.fileSlug == 'publications' %}{% else %}#{% endif %}{% else %}#{% endif %}{{
+				link.slug
+			}}"
+		>
+			{{ link.name }}
+		</a>
 		{% endif %} {% endfor %}
 	</div>
 </nav>

@@ -8,21 +8,17 @@
 		ut labore et dolore magnam aliquam quaerat voluptatem.
 	</p>
 	<div class="home-learn_sections">
-		{% for section in sections %}
+		{% for section in sections %}{% assign iconKey = section.slug | append:
+		'Icon' %}
 		<a
 			class="home-learn_section"
 			href="/learn/{{ section.slug }}"
+			id="learn-{{ section.slug }}"
 			style="--color: #{{ section.color }};"
 			aria-disabled="true"
 		>
 			<span class="home-learn_section-background"></span>
-			{% if section.slug == "resources" %}
-			<img src="{{ cms.website.resourcesIcon.url }}" />
-			{% elsif section.slug == "courses" %}
-			<img src="{{ cms.website.coursesIcon.url }}" />
-			{% elsif section.slug == "software" %}
-			<img src="{{ cms.website.softwareIcon.url }}" />
-			{% endif %}
+			<img src="{{ cms.website[iconKey].url }}" />
 			<span class="home-learn_section-content">
 				<span class="home-learn_section-title">{{ section.title }}</span>
 				<span class="home-learn_section-description">{{

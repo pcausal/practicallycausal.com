@@ -1,15 +1,16 @@
 [
-	{ "name": "What We Do", "url": "#what-we-do" },
-	{ "name": "Who We Are", "url": "#who-we-are" },
-	{ "name": "Publications", "url": "#publications" },
+	{ "name": "What We Do", "slug": "what-we-do" },
+	{ "name": "Who We Are", "slug": "who-we-are" },
+	{ "name": "Publications", "slug": "publications" },
 	{
 		"name": "Learn Causology",
+		"slug": "learn",
 		"links": [
-			{ "name": "Resources", "url": "/learn/resources" },
-			{ "name": "Courses", "url": "/learn/courses" },
-			{ "name": "Software", "url": "/learn/software" }
+			{ "name": "Resources", "slug": "resources" },
+			{ "name": "Courses", "slug": "courses" },
+			{ "name": "Software", "slug": "software" }
 		]
 	},
-	{ "name": "Activities & Events", "url": "#events" },
-	{ "name": "Training & Collaboration", "url": "#opportunities" }
+	{ "name": "Activities & Events", "slug": "events" },
+	{ "name": "Training & Collaboration", "slug": "opportunities" }
 ]
