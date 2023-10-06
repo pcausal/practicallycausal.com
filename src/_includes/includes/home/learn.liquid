@@ -1,0 +1,35 @@
+<section class="home-learn" id="learn">
+	<h1 class="home-learn_title">Learn Causology</h1>
+	<p class="home-learn_body">
+		Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+		sed quia consequuntur magni dolores eos qui ratione voluptatem sequi
+		nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+		consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt
+		ut labore et dolore magnam aliquam quaerat voluptatem.
+	</p>
+	<div class="home-learn_sections">
+		{% for section in sections %}
+		<a
+			class="home-learn_section"
+			href="/learn/{{ section.slug }}"
+			style="--color: #{{ section.color }};"
+			aria-disabled="true"
+		>
+			<span class="home-learn_section-background"></span>
+			{% if section.slug == "resources" %}
+			<img src="{{ cms.website.resourcesIcon.url }}" />
+			{% elsif section.slug == "courses" %}
+			<img src="{{ cms.website.coursesIcon.url }}" />
+			{% elsif section.slug == "software" %}
+			<img src="{{ cms.website.softwareIcon.url }}" />
+			{% endif %}
+			<span class="home-learn_section-content">
+				<span class="home-learn_section-title">{{ section.title }}</span>
+				<span class="home-learn_section-description">{{
+					section.description
+				}}</span>
+			</span>
+		</a>
+		{% endfor %}
+	</div>
+</section>

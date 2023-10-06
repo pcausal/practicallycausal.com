@@ -1,0 +1,28 @@
+<section class="home-who-we-are" id="who-we-are">
+	<h1 class="home-who-we-are_title">Who we are</h1>
+	<p class="home-who-we-are_body">
+		Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+		sed quia consequuntur magni dolores eos qui ratione voluptatem sequi
+		nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+		consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt
+		ut labore et dolore magnam aliquam quaerat voluptatem.
+	</p>
+	<div class="home-who-we-are_people">
+		{% for person in cms.people %}
+		<a
+			class="home-who-we-are_person"
+			href="/people/{{ person.slug }}"
+			aria-disabled="true"
+		>
+			<img
+				class="home-who-we-are_person-image"
+				src="{{ person.photo.url }}"
+				alt="{{ person.name }}"
+			/>
+			<span class="home-who-we-are_person-name">{{ person.name }}</span>
+			<span class="home-who-we-are_person-title">{{ person.title }}</span>
+			<span class="home-who-we-are_person-school">{{ person.school }}</span>
+		</a>
+		{% endfor %}
+	</div>
+</section>

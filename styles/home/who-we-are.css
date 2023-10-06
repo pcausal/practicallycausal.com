@@ -1,0 +1,87 @@
+.home-who-we-are {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 100px 80px;
+	text-align: center;
+	background: var(--extra-light-blue);
+}
+
+@media (min-width: 800px) {
+	.home-who-we-are {
+		padding: 150px 140px;
+	}
+}
+
+.home-who-we-are_title {
+	font-size: 52px;
+	font-weight: 700;
+	color: var(--black);
+}
+
+.home-who-we-are_body {
+	max-width: 572px;
+	margin-top: 40px;
+	line-height: 1.3;
+	font-size: 18px;
+	font-weight: 300;
+	color: var(--gray);
+}
+
+.home-who-we-are_people {
+	display: grid;
+	grid: auto / 1fr;
+	gap: 30px;
+	margin-top: 60px;
+}
+
+@media (min-width: 810px) {
+	.home-who-we-are_people {
+		grid: auto / 1fr 1fr;
+	}
+}
+
+@media (min-width: 1220px) {
+	.home-who-we-are_people {
+		grid: auto / 1fr 1fr 1fr;
+	}
+}
+
+.home-who-we-are_person {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 376px;
+	padding: 40px 75px;
+	color: var(--gray);
+	background: white;
+	border-radius: 8px;
+	box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.075);
+}
+
+.home-who-we-are_person-image {
+	--dimension: 210px;
+
+	width: var(--dimension);
+	height: var(--dimension);
+	overflow: hidden;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+.home-who-we-are_person-name {
+	margin-top: 20px;
+	font-size: 24px;
+	font-weight: 500;
+	color: var(--light-blue);
+}
+
+.home-who-we-are_person-title {
+	margin-top: 8px;
+	line-height: 1.3;
+	font-weight: 300;
+}
+
+.home-who-we-are_person-school {
+	margin-top: 8px;
+}

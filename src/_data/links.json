@@ -1,0 +1,15 @@
+[
+	{ "name": "What We Do", "url": "#what-we-do" },
+	{ "name": "Who We Are", "url": "#who-we-are" },
+	{ "name": "Publications", "url": "#publications" },
+	{
+		"name": "Learn Causology",
+		"links": [
+			{ "name": "Resources", "url": "/learn/resources" },
+			{ "name": "Courses", "url": "/learn/courses" },
+			{ "name": "Software", "url": "/learn/software" }
+		]
+	},
+	{ "name": "Activities & Events", "url": "#events" },
+	{ "name": "Training & Collaboration", "url": "#opportunities" }
+]

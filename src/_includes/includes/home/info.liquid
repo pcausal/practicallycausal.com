@@ -1,0 +1,20 @@
+<section class="home-info">
+	<article class="home-info_data">
+		<img src="{{ cms.website.bigMapIcon.url }}" alt="Map" />
+		<div class="home-info_data-text">
+			<h4 class="home-info_data-title">Address</h4>
+			<p class="home-info_data-value">
+				{{ cms.basic.address | multilineHtml }}
+			</p>
+		</div>
+	</article>
+	<article class="home-info_data">
+		<img src="{{ cms.website.bigMailIcon.url }}" alt="Mail" />
+		<div class="home-info_data-text">
+			<h4 class="home-info_data-title">Email</h4>
+			<a class="home-info_data-value" href="mailto:info@practicallycausal.com">
+				{{ cms.basic.email }}
+			</a>
+		</div>
+	</article>
+</section>

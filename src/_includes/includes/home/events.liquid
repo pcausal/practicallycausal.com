@@ -1,0 +1,31 @@
+<section class="home-events" id="events">
+	<h1 class="home-events_title">Activities & Events</h1>
+	<div class="home-events_content">
+		<a class="home-events_header" href="/events">
+			<span class="home-events_date">{{ cms.events[0].date | monthYear }}</span>
+			<span class="home-events_view-all">
+				See all events
+				<img src="{{ cms.website.downIcon.url }}" />
+			</span>
+		</a>
+		{% for event in cms.events %}
+		<a
+			class="home-events_event"
+			href="/events/{{ event.slug }}"
+			aria-disabled="true"
+		>
+			<span class="home-events_event-date">
+				<span class="home-events_event-month">{{ event.date | month }}</span>
+				<span class="home-events_event-day">{{ event.date | day }}</span>
+			</span>
+			<span class="home-events_event-main">
+				<span class="home-events_event-title">{{ event.title }}</span>
+				<span class="home-events_event-topic">{{ event.topic }}</span>
+			</span>
+			<span class="home-events_event-description">{{
+				event.details.html
+			}}</span>
+		</a>
+		{% endfor %}
+	</div>
+</section>

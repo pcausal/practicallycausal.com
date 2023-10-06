@@ -1,0 +1,37 @@
+<footer class="footer">
+	<div class="footer_top">
+		<h4 class="footer_top-title">{{ cms.basic.name }}</h4>
+		<p class="footer_top-item">{{ cms.basic.address | multilineHtml }}</p>
+		<a class="footer_top-item" href="mailto:{{ cms.basic.email }}">{{
+			cms.basic.email
+		}}</a>
+		<span></span>
+
+		<a class="footer_top-link" href="/">Home</a>
+		<a class="footer_top-link" href="#what-we-do">What we do</a>
+		<a class="footer_top-link" href="#who-we-are">Who we are</a>
+		<a class="footer_top-link" href="#publications">Publications</a>
+
+		<a class="footer_top-link" href="#learn">Learn Causology</a>
+		<a class="footer_top-link" href="#events">Activities & Events</a>
+		<a class="footer_top-link" href="#opportunities"
+			>Training & Collaboration opportunities</a
+		>
+		<span></span>
+
+		<a class="footer_top-link" href="mailto:info@practicallycausal.com"
+			>Contact</a
+		>
+		<a class="footer_top-link" href="/privacy">Privacy Policy</a>
+		<span></span>
+		<span></span>
+	</div>
+	<div class="footer_bottom">
+		<p class="footer_bottom-copyright">{{ cms.basic.longName }} © 2023</p>
+		{% for social in cms.socialMedias %}
+		<a class="footer_bottom-social" href="{{ social.url }}">
+			<img src="{{ social.icon.url }}" />
+		</a>
+		{% endfor %}
+	</div>
+</footer>

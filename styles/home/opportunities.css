@@ -1,0 +1,31 @@
+.home-opportunities {
+	display: flex;
+	background: var(--extra-light-blue);
+}
+
+.home-opportunities_image {
+	flex-shrink: 0;
+}
+
+.home-opportunities_main {
+	padding: 115px 91px;
+	color: var(--black);
+}
+
+.home-opportunities_title {
+	font-size: 56px;
+	font-weight: 600;
+}
+
+.home-opportunities_subtitle {
+	margin-top: 40px;
+	font-size: 32px;
+	font-weight: 200;
+}
+
+.home-opportunities_description {
+	margin-top: 40px;
+	line-height: 1.5;
+	font-weight: 300;
+	color: var(--gray);
+}
