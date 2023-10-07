@@ -8,9 +8,10 @@
 		"links": [
 			{ "name": "Resources", "slug": "resources" },
 			{ "name": "Courses", "slug": "courses" },
-			{ "name": "Software", "slug": "software" }
+			{ "name": "Software", "slug": "software" },
+			{ "name": "Training & Collaboration", "slug": "opportunities" }
 		]
 	},
 	{ "name": "Activities & Events", "slug": "events" },
-	{ "name": "Training & Collaboration", "slug": "opportunities" }
+	{ "name": "Projects", "slug": "projects" }
 ]
