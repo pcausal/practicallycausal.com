@@ -38,9 +38,20 @@ module.exports = function (config) {
 		const date = new Date(dateString)
 		return `${months[date.getUTCMonth()]} ${date.getUTCFullYear()}`
 	})
+	config.addFilter('date', dateString => {
+		const date = new Date(dateString)
+		return `${
+			months[date.getUTCMonth()]
+		} ${date.getUTCDate()}, ${date.getUTCFullYear()}`
+	})
 	config.addFilter('squeezeTag', content =>
 		/^<([a-zA-Z]+)>.*<\/\1>$/.test(content)
 			? content.replace(/^<[a-zA-Z]+>|<\/[a-zA-Z]+>$/g, '')
+			: content
+	)
+	config.addFilter('squeezeParagraphTag', content =>
+		/^<[pP]>.*<\/[pP]>$/.test(content)
+			? content.replace(/^<[pP]>|<\/[pP]>$/g, '')
 			: content
 	)
 	config.addFilter('multilineHtml', content => content.replace('\n', '<br>'))
@@ -135,6 +146,13 @@ module.exports = function (config) {
 				title
 				school
 				role
+			}
+			policy(where: {id: "clnfo8kqodbgx0blpxqd6uo7s"}) {
+				details {
+					html
+					text
+				}
+				effectiveDate
 			}
 		}`)
 	)

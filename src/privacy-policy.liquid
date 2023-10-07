@@ -1,0 +1,17 @@
+---
+title: Privacy Policy - Practically Causal
+styles:
+  - events.css
+  - privacy-policy.css
+layout: layouts/base.liquid
+---
+
+<section class="privacy-policy">
+	<h1 class="privacy-policy_title">Privacy Policy</h1>
+	<div class="privacy-policy_content">
+		<p class="privacy-policy_date">
+			Effective date: {{ cms.policy.effectiveDate | date }}
+		</p>
+		{{ cms.policy.details.html }}
+	</div>
+</section>
