@@ -27,6 +27,8 @@ const dataFromCMS = query =>
 module.exports = function (config) {
 	config.addPassthroughCopy('images')
 	config.addPassthroughCopy('styles')
+	config.addPassthroughCopy('src/site.webmanifest')
+	config.addPassthroughCopy('src/favicon.ico')
 
 	config.addFilter('day', dateString => new Date(dateString).getUTCDate())
 	config.addFilter(
@@ -71,6 +73,14 @@ module.exports = function (config) {
 				}
 				email
 				address
+				whatWeDo {
+					text
+					html
+				}
+				whoWeAre {
+					text
+					html
+				}
 			}
 			website(where: {id: "clncxqdc8iccb0bk92yv12dm8"}) {
 				bigMailIcon {
