@@ -25,7 +25,11 @@
 			<div class="navbar_dropdown-container">
 				<div class="navbar_dropdown-content">
 					{% for sublink in link.links %}
-					<a class="navbar_dropdown-link" href="/#learn-{{ sublink.slug }}">
+					<a
+						class="navbar_dropdown-link"
+						onclick="alert('Under construction, coming soon'); return false"
+						href="/#learn-{{ sublink.slug }}"
+					>
 						{{ sublink.name }}
 					</a>
 					{% endfor %}
@@ -38,6 +42,7 @@
 			href="/{% if link.slug == 'events' or link.slug == 'publications' %}{% if page.fileSlug == 'events' or page.fileSlug == 'publications' %}{% else %}#{% endif %}{% else %}#{% endif %}{{
 				link.slug
 			}}"
+			{% if link.slug == 'events' or link.slug == 'projects' %}onclick="alert('Under construction, coming soon'); return false"{% endif %}
 		>
 			{{ link.name }}
 		</a>
