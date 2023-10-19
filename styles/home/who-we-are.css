@@ -19,6 +19,11 @@
 	color: var(--black);
 }
 
+.home-who-we-are h2 {
+	margin: 24px auto -40px;
+	font-size: xx-large;
+}
+
 .home-who-we-are_body {
 	max-width: 572px;
 	margin-top: 40px;
@@ -26,6 +31,11 @@
 	font-size: 18px;
 	font-weight: 300;
 	color: var(--gray);
+}
+
+.home-who-we-are_body p {
+	text-align: left;
+	margin-bottom: 24px;
 }
 
 .home-who-we-are_people {

@@ -1,24 +1,14 @@
 <section class="home-who-we-are" id="who-we-are">
 	<h1 class="home-who-we-are_title">Who we are</h1>
-	<p class="home-who-we-are_body">
-		{{ cms.basic.whoWeAre.html | squeezeParagraphTag }}
-	</p>
-	<div class="home-who-we-are_people">
-		{% for person in cms.people %}
-		<a
-			class="home-who-we-are_person"
-			href="/people/{{ person.slug }}"
-			aria-disabled="true"
-		>
-			<img
-				class="home-who-we-are_person-image"
-				src="{{ person.photo.url }}"
-				alt="{{ person.name }}"
-			/>
-			<span class="home-who-we-are_person-name">{{ person.name }}</span>
-			<span class="home-who-we-are_person-title">{{ person.title }}</span>
-			<span class="home-who-we-are_person-school">{{ person.school }}</span>
-		</a>
-		{% endfor %}
+	<div class="home-who-we-are_body">
+		{{ cms.basic.whoWeAre.html }}
 	</div>
+	{% for role in roles %}
+	<h2 id="who-we-are-{{ role.slug }}">{{ role.plural }}</h2>
+	<div class="home-who-we-are_people">
+		{% assign leadership = cms.people | where: "role", role.name %} {% for
+		person in leadership %} {% include 'includes/home/profile.liquid' with
+		person %} {% endfor %}
+	</div>
+	{% endfor %}
 </section>

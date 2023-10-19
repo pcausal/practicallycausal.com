@@ -1,0 +1,14 @@
+<a
+	class="home-who-we-are_person"
+	href="/people/{{ person.slug }}"
+	aria-disabled="true"
+>
+	<img
+		class="home-who-we-are_person-image"
+		src="{{ person.photo.url }}"
+		alt="{{ person.name }}"
+	/>
+	<span class="home-who-we-are_person-name">{{ person.name }}</span>
+	<span class="home-who-we-are_person-title">{{ person.title }}</span>
+	<span class="home-who-we-are_person-school">{{ person.school }}</span>
+</a>

@@ -1,6 +1,14 @@
 [
 	{ "name": "What We Do", "slug": "what-we-do" },
-	{ "name": "Who We Are", "slug": "who-we-are" },
+	{
+		"name": "Who We Are",
+		"slug": "who-we-are",
+		"links": [
+			{ "name": "Leadership", "slug": "leadership" },
+			{ "name": "Researchers", "slug": "researchers" },
+			{ "name": "Faculty Affiliates", "slug": "faculty-affiliates" }
+		]
+	},
 	{ "name": "Publications", "slug": "publications" },
 	{
 		"name": "Learn Causology",
@@ -13,5 +21,6 @@
 		]
 	},
 	{ "name": "Activities & Events", "slug": "events" },
-	{ "name": "Projects", "slug": "projects" }
+	{ "name": "Projects", "slug": "projects" },
+	{ "name": "Papers We Love", "slug": "papers-we-love" }
 ]

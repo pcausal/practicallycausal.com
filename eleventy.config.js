@@ -81,6 +81,10 @@ module.exports = function (config) {
 					text
 					html
 				}
+				publications {
+					text
+					html
+				}
 			}
 			website(where: {id: "clncxqdc8iccb0bk92yv12dm8"}) {
 				bigMailIcon {

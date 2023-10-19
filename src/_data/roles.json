@@ -1,0 +1,9 @@
+[
+	{ "name": "Leader", "plural": "Leadership", "slug": "leadership" },
+	{ "name": "Researcher", "plural": "Researchers", "slug": "researchers" },
+	{
+		"name": "Faculty_affiliate",
+		"plural": "Faculty Affiliates",
+		"slug": "faculty-affiliates"
+	}
+]
