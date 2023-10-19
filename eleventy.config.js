@@ -146,6 +146,7 @@ module.exports = function (config) {
 			publications(orderBy: date_DESC) {
 				date
 				title
+				slug
 				abstract {
 					html
 					text
