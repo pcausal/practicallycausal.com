@@ -151,6 +151,11 @@ module.exports = function (config) {
 					html
 					text
 				}
+				authors {
+					name
+					homepage
+				}
+				url
 			}
 			people(orderBy: role_ASC) {
 				name
