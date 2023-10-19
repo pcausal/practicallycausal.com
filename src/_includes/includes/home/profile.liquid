@@ -1,6 +1,17 @@
 <a
+	{%
+	if
+	person.homepage
+	%}
+	class="home-who-we-are_person homepage"
+	href="{{ person.homepage }}"
+	{%
+	else
+	%}
 	class="home-who-we-are_person"
-	href="/people/{{ person.slug }}"
+	{%
+	endif
+	%}
 	aria-disabled="true"
 >
 	<img
@@ -11,4 +22,7 @@
 	<span class="home-who-we-are_person-name">{{ person.name }}</span>
 	<span class="home-who-we-are_person-title">{{ person.title }}</span>
 	<span class="home-who-we-are_person-school">{{ person.school }}</span>
+	<span class="home-who-we-are_person-biography">{{
+		person.biography.html
+	}}</span>
 </a>

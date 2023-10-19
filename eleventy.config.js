@@ -160,6 +160,11 @@ module.exports = function (config) {
 				title
 				school
 				role
+				homepage
+				biography {
+					html
+					text
+				}
 			}
 			policy(where: {id: "clnfo8kqodbgx0blpxqd6uo7s"}) {
 				details {
