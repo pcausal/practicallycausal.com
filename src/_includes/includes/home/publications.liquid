@@ -14,18 +14,16 @@
 			</span>
 		</a>
 		{% for publication in cms.publications %}
-		<a
-			class="home-publications_publication"
-			href="/publications/{{ slug }}"
-			aria-disabled="true"
-		>
-			<span class="home-publications_publication-title">{{
-				publication.title
+		<div class="home-publications_publication">
+			<a href="{{ publication.url }}">
+				<span class="home-publications_publication-title">{{
+					publication.title
+				}}</span>
+			</a>
+			<span class="home-publications_publication-preview preview">{{
+				publication.abstract.html
 			}}</span>
-			<span class="home-publications_publication-preview">{{
-				publication.abstract.html | squeezeTag
-			}}</span>
-		</a>
+		</div>
 		{% endfor %}
 	</div>
 </section>

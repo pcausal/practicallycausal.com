@@ -37,7 +37,24 @@ styles:
 		{% for path in styles %}
 		<link rel="stylesheet" href="/styles/{{ path }}" />
 		{% endfor %}
+		<script src="https://cdn.jsdelivr.net/gh/tomickigrzegorz/show-more/dist/js/showMore.min.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/gh/tomickigrzegorz/show-more/dist/css/show-more.min.css"
+		/>
 		<title>{{ cms.website.title }}</title>
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				new ShowMore('.preview', {
+					config: {
+						type: 'text',
+						limit: 210,
+						more: '&#8594; more',
+						less: '&#8592; less',
+					},
+				})
+			})
+		</script>
 	</head>
 	<body>
 		{% include 'includes/navbar.liquid' %} {{ content }} {% include

@@ -1,18 +1,12 @@
 <a
+	class="home-who-we-are_person"
 	{%
 	if
 	person.homepage
-	%}
-	class="home-who-we-are_person homepage"
-	href="{{ person.homepage }}"
-	{%
-	else
-	%}
-	class="home-who-we-are_person"
+	%}href="{{ person.homepage }}"
 	{%
 	endif
 	%}
-	aria-disabled="true"
 >
 	<img
 		class="home-who-we-are_person-image"
