@@ -20,8 +20,8 @@
 			<span>Lab</span>
 		</a>
 		<div class="navbar_full">
-			{% for link in links %}
-				{% if link.links %}
+			{% for link in cms.website.navigationBar %}
+				{% if link.links.size > 0 %}
 					<div class="navbar_dropdown">
 						<a class="navbar_dropdown-trigger" href="/#{{ link.slug }}">
 							{{ link.name }}
@@ -35,7 +35,7 @@
 										{% if link.slug =='learn' %}
 											onclick="alert('Under construction, coming soon'); return false"
 										{% endif %}
-										href="/#{{ link.slug }}-{{ sublink.slug }}"
+										href="/#{{ sublink.slug }}"
 									>
 										{{ sublink.name }}
 									</a>

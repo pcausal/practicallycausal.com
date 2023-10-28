@@ -4,7 +4,7 @@
 		{{ cms.basic.whoWeAre.html }}
 	</div>
 	{% for role in roles %}
-	<h2 id="who-we-are-{{ role.slug }}">{{ role.plural }}</h2>
+	<h2 id="{{ role.slug }}">{{ role.plural }}</h2>
 	<div class="home-who-we-are_people">
 		{% assign leadership = cms.people | where: "role", role.name %} {% for
 		person in leadership %} {% include 'includes/home/profile.liquid' with

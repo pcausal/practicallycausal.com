@@ -87,6 +87,14 @@ module.exports = function (config) {
 				}
 			}
 			website(where: {id: "clncxqdc8iccb0bk92yv12dm8"}) {
+				navigationBar {
+					name
+					links {
+						name
+						slug
+					}
+					slug
+				}
 				bigMailIcon {
 					url
 				}
