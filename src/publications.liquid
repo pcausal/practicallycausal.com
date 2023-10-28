@@ -11,18 +11,8 @@ layout: layouts/base.liquid
 		{{ cms.basic.publications.html }}
 	</div>
 	<div class="publications_content">
-		<p class="publications_year">{{ cms.publications[0].date | year }}</p>
-		{% for publication in cms.publications %}
-		<div class="publications_publication">
-			<a href="{{ publication.url }}">
-				<span class="publications_publication-title">{{
-					publication.title
-				}}</span>
-			</a>
-			<span class="publications_publication-preview preview">{{
-				publication.abstract.html
-			}}</span>
-		</div>
-		{% endfor %}
+		<p class="publications_year">{{ cms.papers[0].date | year }}</p>
+		{% for paper in cms.papers %} {% include 'includes/paper.liquid' with paper
+		%} {% endfor %}
 	</div>
 </section>

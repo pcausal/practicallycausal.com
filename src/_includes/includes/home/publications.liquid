@@ -6,24 +6,14 @@
 	<div class="home-publications_content">
 		<a class="home-publications_header" href="/publications">
 			<span class="home-publications_year">{{
-				cms.publications[0].date | monthYear
+				cms.papers[0].date | monthYear
 			}}</span>
 			<span class="home-publications_view-all">
 				View all publications
 				<img src="{{ cms.website.downIcon.url }}" />
 			</span>
 		</a>
-		{% for publication in cms.publications %}
-		<div class="home-publications_publication">
-			<a href="{{ publication.url }}">
-				<span class="home-publications_publication-title">{{
-					publication.title
-				}}</span>
-			</a>
-			<span class="home-publications_publication-preview preview">{{
-				publication.abstract.html
-			}}</span>
-		</div>
-		{% endfor %}
+		{% for paper in cms.papers limit:4 %} {% include 'includes/paper.liquid'
+		with paper %} {% endfor %}
 	</div>
 </section>

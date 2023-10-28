@@ -49,7 +49,7 @@
 	transform: rotate(-0.25turn);
 }
 
-.home-publications_publication {
+.publications_publication {
 	display: flex;
 	position: relative;
 	flex-direction: column;
@@ -63,7 +63,7 @@
 	border-radius: 8px;
 }
 
-.home-publications_publication::before {
+.publications_publication::before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -73,12 +73,12 @@
 	background: var(--extra-light-blue);
 }
 
-.home-publications_publication-title {
+.publications_publication-title {
 	font-size: 24px;
 	color: var(--light-blue);
 }
 
-.home-publications_publication-preview {
+.publications_publication-preview {
 	margin-top: 12px;
 	line-height: 1.3;
 	font-weight: 300;

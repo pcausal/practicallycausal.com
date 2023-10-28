@@ -1,0 +1,9 @@
+<div class="publications_publication">
+	<p>{{ paper.date | monthYear }}</p>
+	<a href="{{ publication.url }}">
+		<span class="publications_publication-title">{{ paper.title }}</span>
+	</a>
+	<span class="publications_publication-preview preview">{{
+		paper.abstract.html
+	}}</span>
+</div>
