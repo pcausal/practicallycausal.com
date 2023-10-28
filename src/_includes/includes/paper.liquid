@@ -1,4 +1,4 @@
-<div class="publications_publication">
+<div class="publications_publication paper_summary">
 	<p>{{ paper.date | monthYear }}</p>
 	<a href="{{ publication.url }}">
 		<span class="publications_publication-title">{{ paper.title }}</span>
@@ -6,4 +6,11 @@
 	<span class="publications_publication-preview preview">{{
 		paper.abstract.html
 	}}</span>
+	<p class="authors">
+		{% for author in paper.authors %}{% if author.homepage %}<a
+			href="{{ author.homepage }}"
+			>{{ author.name }}</a
+		>{% else %}{{ author.name }}{%endif%}{% unless forloop.last %}, {% endunless
+		%}{% endfor %}
+	</p>
 </div>

@@ -67,3 +67,8 @@
 	font-weight: 300;
 	color: var(--gray);
 }
+
+.paper_summary .authors {
+	margin-top: 12px;
+	font-weight: 300;
+}
