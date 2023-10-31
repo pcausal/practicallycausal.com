@@ -165,7 +165,7 @@ module.exports = function (config) {
 				}
 				url
 			}
-			people(orderBy: role_ASC) {
+			people(orderBy: role_ASC, first:100) {
 				name
 				slug
 				photo {
