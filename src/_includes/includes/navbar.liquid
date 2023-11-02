@@ -32,7 +32,7 @@
 								{% for sublink in link.links %}
 									<a
 										class="navbar_dropdown-link"
-										{% if link.slug =='learn' %}
+										{% if link.slug == 'learn' or sublink.slug == 'projects' or sublink.slug == 'spotlight' %}
 											onclick="alert('Under construction, coming soon'); return false"
 										{% endif %}
 										href="/#{{ sublink.slug }}"
@@ -59,8 +59,8 @@
 		<button class="navbar_menu-button" onclick="document.querySelector('.navbar_menu-toggle').classList.toggle('navbar_hidden')">Menu</button>
 	</div>
 	<div class="navbar_menu-toggle navbar_hidden">
-		{% for link in links %}
-			{% if link.links %}
+		{% for link in cms.website.navigationBar %}
+			{% if link.links.size > 0 %}
 				<div class="navbar_dropdown">
 					<a class="navbar_dropdown-trigger" href="/#{{ link.slug }}">
 						{{ link.name }}
@@ -71,7 +71,7 @@
 							{% for sublink in link.links %}
 								<a
 									class="navbar_dropdown-link"
-									{% if link.slug =='learn' %}
+									{% if link.slug =='learn' or sublink.slug == 'projects' or sublink.slug == 'spotlight' %}
 										onclick="alert('Under construction, coming soon'); return false"
 									{% endif %}
 									href="/#{{ link.slug }}-{{ sublink.slug }}"
