@@ -68,7 +68,12 @@
 	color: var(--gray);
 }
 
-.paper_summary .authors {
+.paper_summary .authors,
+.paper_summary .links {
 	margin-top: 12px;
 	font-weight: 300;
+}
+
+.paper_summary .links strong {
+	font-weight: 400;
 }

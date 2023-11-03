@@ -164,6 +164,15 @@ module.exports = function (config) {
 					homepage
 				}
 				url
+				links {
+					name
+					url
+				}
+				softwares {
+					name
+					url
+					slug
+				}
 			}
 			people(orderBy: role_ASC, first:100) {
 				name
