@@ -32,10 +32,10 @@
 								{% for sublink in link.links %}
 									<a
 										class="navbar_dropdown-link"
-										{% if link.slug == 'learn' or sublink.slug == 'projects' or sublink.slug == 'spotlight' %}
+										{% if sublink.slug == 'resources' or sublink.slug == 'courses' or sublink.slug == 'opportunities' or sublink.slug == 'projects' or sublink.slug == 'spotlight' %}
 											onclick="alert('Under construction, coming soon'); return false"
 										{% endif %}
-										href="/#{{ sublink.slug }}"
+										href="/{% if sublink.slug != 'software' %}#{% endif %}{{ sublink.slug }}"
 									>
 										{{ sublink.name }}
 									</a>

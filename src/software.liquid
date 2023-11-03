@@ -8,6 +8,23 @@ layout: layouts/base.liquid
 <section class="software">
 	<h1 class="software_title">Software</h1>
 	<div class="software_content">
-		{{ cms.policy.details.html }}
+		{% for software in cms.softwares %}
+		<div class="software_item" id="{{ software.slug }}">
+			<h3>{{ software.name }}</h3>
+			{% if software.description and software.description.html.size > 7 %}
+			<div class="description">{{ software.description.html }}</div>
+			{% endif %}
+			<p class="url">
+				<a href="{{ software.url }}">{{ software.url }}</a>
+			</p>
+			<p class="papers">
+				<strong>Paper{% if software.papers.size > 1 %}s{% endif %}</strong>: {%
+				for paper in software.papers %}<a
+					href="/publications/#paper_{{ paper.slug }}"
+					>{{ paper.title }}</a
+				>{% unless forloop.last %}, {% endunless %}{% endfor %}
+			</p>
+		</div>
+		{% endfor %}
 	</div>
 </section>

@@ -1,33 +1,40 @@
-.privacy-policy {
+.software {
 	padding: 100px 240px;
 }
-.privacy-policy_title {
+.software_title {
 	font-size: 52px;
 	font-weight: 700;
 	color: var(--black);
 }
-.privacy-policy_content {
+.software_content {
 	margin-top: 60px;
 	line-height: 20px;
 }
-.privacy-policy_date {
-	font-size: 24px;
-	font-weight: 500;
-	padding: 24px 0 24px 24px;
-	color: var(--black);
-	border-left: 2px solid #ddd;
-}
-.privacy-policy_content > ol,
-.privacy-policy_content > p {
+.software_content .software_item {
 	margin-top: 20px;
+	background-color: rgba(0, 128, 255, 0.05);
+	padding: 7px;
+	border-radius: 5px;
+	overflow: hidden;
 }
-.privacy-policy_content strong {
-	font-weight: bold;
+.software_content .software_item h3 {
+	font-size: larger;
 }
-.privacy-policy_content li {
+
+.software_content .software_item .description,
+.software_content .software_item .url,
+.software_content .software_item .papers {
+	font-weight: 300;
 	margin-top: 10px;
 }
-.privacy-policy_content ul,
-.privacy-policy_content ol {
-	margin-left: 17px;
+
+.software_content strong {
+	font-weight: 400;
+}
+.software_content .software_item h3,
+.software_content .software_item .description,
+.software_content .software_item .papers,
+.software_content .software_item .url {
+	overflow: hidden;
+	text-overflow: ellipsis;
 }

@@ -136,7 +136,7 @@
 	display: block;
 }
 
-@media (min-width: 1330px) {
+@media (min-width: 730px) {
 	.navbar_full {
 		display: flex;
 	}

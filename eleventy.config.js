@@ -196,6 +196,23 @@ module.exports = function (config) {
 				}
 				effectiveDate
 			}
+			softwares {
+				name
+				slug
+				url
+				description {
+					html
+					text
+				}
+				papers {
+					title
+					slug
+				}
+			}
+			links {
+				name
+				url
+			}
 		}`)
 	)
 

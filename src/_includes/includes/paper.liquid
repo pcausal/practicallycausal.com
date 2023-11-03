@@ -1,4 +1,4 @@
-<div class="publications_publication paper_summary">
+<div class="publications_publication paper_summary" id="paper_{{ paper.slug }}">
 	<p>{{ paper.date | monthYear }}</p>
 	<a href="{{ paper.url }}">
 		<span class="publications_publication-title">{{ paper.title }}</span>
@@ -16,7 +16,7 @@
 	{% if paper.softwares.size > 0 or paper.links.size > 0 %}
 	<p class="links">
 		{% if paper.softwares.size > 0 %}<strong>Software</strong>: {% for software
-		in paper.softwares %}<a href="/software#{{ software.slug }}">{{
+		in paper.softwares %}<a href="/software/#{{ software.slug }}">{{
 			software.name
 		}}</a
 		>{% unless forloop.last and paper.links.size == 0 %}, {% endunless %}{%
