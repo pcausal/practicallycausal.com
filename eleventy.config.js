@@ -173,6 +173,10 @@ module.exports = function (config) {
 					url
 					slug
 				}
+				publication {
+					name
+					url
+				}
 			}
 			people(orderBy: role_ASC, first:100) {
 				name

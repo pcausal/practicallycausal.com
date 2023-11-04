@@ -60,7 +60,9 @@
 	font-size: 24px;
 	color: var(--light-blue);
 }
-
+.publications_publication-publication {
+	color: black;
+}
 .publications_publication-preview {
 	margin-top: 12px;
 	line-height: 1.3;

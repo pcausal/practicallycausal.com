@@ -1,8 +1,13 @@
 <div class="publications_publication paper_summary" id="paper_{{ paper.slug }}">
 	<p>{{ paper.date | monthYear }}</p>
 	<a href="{{ paper.url }}">
-		<span class="publications_publication-title">{{ paper.title }}</span>
-	</a>
+		<span class="publications_publication-title">{{ paper.title }}</span> </a
+	>{% if paper.publication %}
+	<a
+		href="{{ paper.publication.url }}"
+		class="publications_publication-publication"
+		>{{ paper.publication.name }}</a
+	>{% endif %}
 	<span class="publications_publication-preview preview">{{
 		paper.abstract.html
 	}}</span>
