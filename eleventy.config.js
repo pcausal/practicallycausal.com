@@ -85,6 +85,10 @@ module.exports = function (config) {
 					text
 					html
 				}
+				joinUs {
+					html
+					text
+				}
 			}
 			website(where: {id: "clncxqdc8iccb0bk92yv12dm8"}) {
 				navigationBar {

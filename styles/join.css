@@ -1,33 +1,49 @@
-.privacy-policy {
+.join {
 	padding: 100px 240px;
 }
-.privacy-policy_title {
+.join_title {
 	font-size: 52px;
 	font-weight: 700;
 	color: var(--black);
 }
-.privacy-policy_content {
+.join_content {
 	margin-top: 60px;
 	line-height: 20px;
 }
-.privacy-policy_date {
+.join_content a.highlight {
+	background-color: aliceblue;
+	border: 1px solid black;
+	padding: 0px 5px;
+	border-radius: 7px;
+}
+.join_content a.highlight:visited {
+	color: black;
+}
+.join_content h2,
+.join_content h3,
+.join_content h4 {
+	font-size: revert;
+	font-weight: revert;
+	margin-top: inherit;
+}
+.join_date {
 	font-size: 24px;
 	font-weight: 500;
 	padding: 24px 0 24px 24px;
 	color: var(--black);
 	border-left: 2px solid #ddd;
 }
-.privacy-policy_content > ol,
-.privacy-policy_content > p {
+.join_content > ol,
+.join_content > p {
 	margin-top: 20px;
 }
-.privacy-policy_content strong {
+.join_content strong {
 	font-weight: bold;
 }
-.privacy-policy_content li {
+.join_content li {
 	margin-top: 10px;
 }
-.privacy-policy_content ul,
-.privacy-policy_content ol {
+.join_content ul,
+.join_content ol {
 	margin-left: 17px;
 }

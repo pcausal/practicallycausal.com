@@ -132,6 +132,13 @@
 	align-items: center;
 }
 
+.navbar_full .navbar_link.highlight {
+	background-color: aliceblue;
+	border: 1px solid black;
+	padding: 4px 5px;
+	border-radius: 7px;
+}
+
 .navbar_menu-button {
 	display: block;
 }
