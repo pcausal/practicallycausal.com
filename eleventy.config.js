@@ -155,7 +155,7 @@ module.exports = function (config) {
 				}
 				slug
 			}
-			papers(orderBy: date_DESC) {
+			papers(orderBy: date_DESC, first:100) {
 				date
 				title
 				slug
