@@ -3,7 +3,8 @@
 	{ "name": "Researcher", "plural": "Researchers", "slug": "researchers" },
 	{
 		"name": "Faculty_affiliate",
-		"plural": "Faculty Affiliates",
+		"plural": "Faculty",
 		"slug": "faculty-affiliates"
-	}
+	},
+	{ "name": "Affiliate", "plural": "Affiliates", "slug": "affiliates" }
 ]
