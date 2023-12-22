@@ -10,15 +10,6 @@
 	margin-top: 60px;
 	line-height: 20px;
 }
-.join_content a.highlight {
-	background-color: aliceblue;
-	border: 1px solid black;
-	padding: 0px 5px;
-	border-radius: 7px;
-}
-.join_content a.highlight:visited {
-	color: black;
-}
 .join_content h2,
 .join_content h3,
 .join_content h4 {

@@ -56,7 +56,9 @@ module.exports = function (config) {
 			? content.replace(/^<[pP]>|<\/[pP]>$/g, '')
 			: content
 	)
-	config.addFilter('multilineHtml', content => content.replace('\n', '<br>'))
+	config.addFilter('multilineHtml', content =>
+		content ? content.replace('\n', '<br>') : ''
+	)
 
 	config.addGlobalData(
 		'cms',
@@ -219,6 +221,31 @@ module.exports = function (config) {
 			}
 			links {
 				name
+				url
+			}
+			projects {
+				date
+				description {
+					html
+					text
+				}
+				image {
+					url
+				}
+				links {
+					url
+					name
+				}
+				slug
+				softwares {
+					name
+					url
+				}
+				collaborators {
+					name
+					homepage
+				}
+				title
 				url
 			}
 		}`)

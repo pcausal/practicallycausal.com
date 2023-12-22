@@ -1,4 +1,8 @@
 <nav class="navbar">
+	<a class="navbar_logo" href="/">
+		<img height="72" src="{{ cms.basic.logo[0].url }}">
+		{{ cms.basic.shortIntro.html }}
+	</a>
 	<div class="navbar_header">
 		{% for social in cms.socialMedias %}
 			<a class="navbar_social" href="{{ social.url }}">
@@ -15,9 +19,6 @@
 	</div>
 	<hr class="navbar_divider" />
 	<div class="navbar_main">
-		<a class="navbar_logo" href="/">
-			<img height="45" src="{{ cms.basic.logo[1].url }}">
-		</a>
 		<div class="navbar_full">
 			{% for link in cms.website.navigationBar %}
 				{% if link.links.size > 0 %}
@@ -31,10 +32,10 @@
 								{% for sublink in link.links %}
 									<a
 										class="navbar_dropdown-link"
-										{% if sublink.slug == 'resources' or sublink.slug == 'courses' or sublink.slug == 'opportunities' or sublink.slug == 'projects' or sublink.slug == 'spotlight' %}
+										{% if sublink.slug == 'resources' or sublink.slug == 'courses' or sublink.slug == 'opportunities' or sublink.slug == 'spotlight' %}
 											onclick="alert('Under construction, coming soon'); return false"
 										{% endif %}
-										href="/{% if sublink.slug != 'software' %}#{% endif %}{{ sublink.slug }}"
+										href="/{% if sublink.slug != 'software' and sublink.slug != 'projects' %}#{% endif %}{{ sublink.slug }}"
 									>
 										{{ sublink.name }}
 									</a>
