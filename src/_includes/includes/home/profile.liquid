@@ -7,9 +7,13 @@
 		/>
 		<span class="home-who-we-are_person-name">{{ person.name }}</span></a
 	>
+	{% if person.title %}
 	<span class="home-who-we-are_person-title">{{ person.title }}</span>
+	{% endif %} {% if person.school %}
 	<span class="home-who-we-are_person-school">{{ person.school }}</span>
+	{% endif %} {% if person.biography and person.biography.html.size > 7 %}
 	<span class="home-who-we-are_person-biography preview">{{
 		person.biography.html
 	}}</span>
+	{% endif %}
 </div>
