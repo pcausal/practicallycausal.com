@@ -1,0 +1,45 @@
+div.content .project {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-top: 32px;
+	padding: 35px;
+	overflow: hidden;
+	text-align: left;
+	background: white;
+	box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.075);
+	border-radius: 8px;
+}
+div.content .project::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 6px;
+	background: var(--extra-light-blue);
+}
+div.content .project h3 {
+	font-size: larger;
+	margin-top: 0;
+}
+div.content .project .collaborators {
+	margin-top: 2px;
+}
+div.content .project .description {
+	margin-top: 10px;
+}
+div.content .project .description,
+div.content .project .url,
+div.content .project .collaborators {
+	font-weight: 300;
+}
+div.content .project h3,
+div.content .project .description,
+div.content .project .collaborators,
+div.content .project .url {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 100%;
+}

@@ -12,21 +12,19 @@ layout: layouts/base.liquid
 		{% for project in cms.projects %}
 		<div class="project" id="{{ project.slug }}">
 			<h3>{{ project.title }}</h3>
-			{% if project.description and project.description.html.size > 7 %}
+			{% if project.collaborators.size > 0 %}
+			<p class="collaborators">
+				{% for collaborator in project.collaborators %}<a
+					href="{{ collaborator.homepage }}"
+					>{{ collaborator.name }}</a
+				>{% unless forloop.last %}, {% endunless %}{% endfor %}
+			</p>
+			{% endif %} {% if project.description and project.description.html.size >
+			7 %}
 			<div class="description">{{ project.description.html }}</div>
 			{% endif %} {% if project.url %}
 			<p class="url">
 				<a href="{{ project.url }}">{{ project.url }}</a>
-			</p>
-			{% endif %} {% if collaborators.size > 0 %}
-			<p class="collaborators">
-				<strong
-					>Collaborator{% if project.collaborators.size > 1 %}s{% endif
-					%}</strong
-				>: {% for collaborator in project.collaborators %}<a
-					href="/{{ collaborator.homepage }}"
-					>{{ collaborator.name }}</a
-				>{% unless forloop.last %}, {% endunless %}{% endfor %}
 			</p>
 			{% endif %}
 		</div>
