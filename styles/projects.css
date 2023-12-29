@@ -43,3 +43,16 @@ div.content .project .url {
 	text-overflow: ellipsis;
 	width: 100%;
 }
+div.content .project .links {
+	margin-top: 12px;
+	font-weight: 300;
+}
+div.content .project .links strong {
+	font-weight: 400;
+}
+div.content .project img {
+	width: 100%;
+	max-width: 500px;
+	max-height: 300px;
+	margin-bottom: 12px;
+}
