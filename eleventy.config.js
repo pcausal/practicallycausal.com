@@ -223,7 +223,7 @@ module.exports = function (config) {
 				name
 				url
 			}
-			projects {
+			projects(first:100) {
 				date
 				description {
 					html
