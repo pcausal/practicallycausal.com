@@ -18,9 +18,7 @@ layout: layouts/base.liquid
 			<h3>{{ project.title }}</h3>
 			{% if project.collaborators.size > 0 %}
 			<p class="collaborators">
-				{% for collaborator in project.collaborators %}<a
-					href="{{ collaborator.homepage }}"
-					>{{ collaborator.name }}</a
+				{% for collaborator in project.collaborators %}<a{% if collaborator.homepage %} href="{{ collaborator.homepage }}"{% endif %}>{{ collaborator.name }}</a
 				>{% unless forloop.last %}, {% endunless %}{% endfor %}
 			</p>
 			{% endif %} {% if project.description and project.description.html.size >
