@@ -37,7 +37,14 @@ styles:
 		<link rel="manifest" href="/site.webmanifest" />
 		{% for path in styles %}
 		<link rel="stylesheet" href="/styles/{{ path }}" />
-		{% endfor %}
+		{% endfor %} {% if slider %}
+		<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+		/>
+		<link rel="stylesheet" href="/styles/slider/projects.css" />
+		{% endif %}
 		<script src="https://cdn.jsdelivr.net/gh/tomickigrzegorz/show-more/dist/js/showMore.min.js"></script>
 		<link
 			rel="stylesheet"

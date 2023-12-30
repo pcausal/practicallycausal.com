@@ -1,3 +1,4 @@
+{% comment %}
 <header class="home-header">
 	<div class="home-header_foreground">
 		<hr class="home-header_divider" />
@@ -10,3 +11,48 @@
 		</div>
 	</div>
 </header>
+{% endcomment %}
+<section class="splide" aria-label="Projects carousel">
+	<div class="splide__track">
+		<ul class="splide__list">
+			{% for project in cms.projects %}
+			<li class="project splide__slide">{% if project.image %}<img
+				src="{{ project.image.url }}"
+				alt="{{ project.title }}"
+			/>{% endif %}
+			<div>
+			<h3>{{ project.title }}</h3>
+			{% if project.collaborators.size > 0 %}
+			<p class="collaborators">
+				{% for collaborator in project.collaborators %}<a{% if collaborator.homepage %} href="{{ collaborator.homepage }}"{% endif %}>{{ collaborator.name }}</a
+				>{% unless forloop.last %}, {% endunless %}{% endfor %}
+			</p>
+			{% endif %} {% if project.description and project.description.html.size >
+			7 %}
+			<div class="description">{{ project.description.html }}</div>
+			{% endif %} {% if project.url %}
+			<p class="url">
+				<a href="{{ project.url }}">{{ project.url }}</a>
+			</p>
+			{% endif %} {% if project.softwares.size > 0 or project.links.size > 0 %}
+			<p class="links">
+				{% if project.softwares.size > 0 %}<strong>Software</strong>: {% for
+				software in project.softwares %}<a
+					href="/software/#{{ software.slug }}"
+					>{{ software.name }}</a
+				>{% unless forloop.last and project.links.size == 0 %}, {% endunless
+				%}{% endfor %}{% endif %} {% if project.links.size > 0 %}<strong
+					>Link{% if project.links.size > 1 %}s{% endif %}</strong
+				>: {% for link in project.links %}<a href="{{ link.url }}">{{
+					link.name
+				}}</a
+				>{% unless forloop.last %}, {% endunless %}{% endfor %}{% endif %}
+			</p>
+			{% endif %}</div></li>
+			{% endfor %}
+		</ul>
+	</div>
+</section>
+<script>
+	new Splide('.splide', {type: 'loop', autoplay: true, interval: 7000}).mount()
+</script>
