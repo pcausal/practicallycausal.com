@@ -3,7 +3,7 @@ li.project {
 	flex-direction: row;
 	gap: 15px;
 	margin-top: 32px;
-	padding: 130px;
+	padding: 30px 130px;
 }
 li.project h3 {
 	font-size: larger;
