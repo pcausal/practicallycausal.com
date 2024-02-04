@@ -41,19 +41,40 @@
 .home-who-we-are_people {
 	display: grid;
 	grid: auto / 1fr;
-	gap: 30px;
+	/* gap: 30px; */
+	gap: 12px;
 	margin-top: 60px;
 }
 
-@media (min-width: 810px) {
+/* @media (min-width: 810px) { */
+@media (min-width: 660px) {
 	.home-who-we-are_people {
 		grid: auto / 1fr 1fr;
 	}
 }
 
-@media (min-width: 1220px) {
+/* @media (min-width: 1220px) { */
+@media (min-width: 1040px) {
 	.home-who-we-are_people {
 		grid: auto / 1fr 1fr 1fr;
+	}
+}
+
+@media (min-width: 1320px) {
+	.home-who-we-are_people {
+		grid: auto / 1fr 1fr 1fr 1fr;
+	}
+}
+
+@media (min-width: 1520px) {
+	.home-who-we-are_people {
+		grid: auto / 1fr 1fr 1fr 1fr 1fr;
+	}
+}
+
+@media (min-width: 1700px) {
+	.home-who-we-are_people {
+		grid: auto / 1fr 1fr 1fr 1fr 1fr 1fr;
 	}
 }
 
@@ -61,8 +82,10 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	max-width: 376px;
-	padding: 40px 75px;
+	/* max-width: 376px;
+	padding: 40px 75px; */
+	max-width: 220px;
+	padding: 5px 12px 12px 12px;
 	color: var(--gray);
 	background: white;
 	border-radius: 8px;
