@@ -91,6 +91,10 @@ module.exports = function (config) {
 					html
 					text
 				}
+				events {
+					text
+					html
+				}
 			}
 			website(where: {id: "clncxqdc8iccb0bk92yv12dm8"}) {
 				navigationBar {

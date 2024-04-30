@@ -7,8 +7,9 @@ layout: layouts/base.liquid
 
 <section class="events">
 	<h1 class="events_title">Activities & Events</h1>
+	<div class="events_body">{{ cms.basic.events.html }}</div>
 	<div class="events_content">
-		<p class="events_date">{{ cms.events[0].date | monthYear }}</p>
+		<p class="events_date">{{ cms.events[0].date | year }}</p>
 		{% for event in cms.events %}
 		<a
 			class="events_event"
