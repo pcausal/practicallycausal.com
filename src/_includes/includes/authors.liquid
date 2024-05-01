@@ -1,0 +1,5 @@
+{% for author in authors %}{% if author.homepage %}<a
+	href="{{ author.homepage }}"
+	>{{ author.name }}</a
+>{% else %}{{ author.name }}{%endif%}{% unless forloop.last %}, {% endunless
+%}{% endfor %}

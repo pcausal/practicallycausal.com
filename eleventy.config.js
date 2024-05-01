@@ -159,6 +159,12 @@ module.exports = function (config) {
 					html
 					text
 				}
+				hosts {
+					name
+					title
+					school
+					homepage
+				}
 				slug
 			}
 			papers(orderBy: date_DESC, first:100) {

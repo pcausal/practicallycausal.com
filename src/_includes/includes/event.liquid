@@ -1,0 +1,14 @@
+<div class="events_event" href="/events/{{ event.slug }}" aria-disabled="true">
+	<div class="events_event-date">
+		<span class="events_event-month">{{ event.date | month }}</span>
+		<span class="events_event-day">{{ event.date | day }}</span>
+	</div>
+	<div class="events_event-main">
+		<p class="events_event-title">{{ event.title }}</p>
+		<p class="events_event-topic">{{ event.topic }}</p>
+		<p class="events_event-hosts">{% include 'includes/authors.liquid', authors: event.hosts %}</p>
+		<div class="events_event-description">{{
+			event.details.html
+		}}</span>
+	</div>
+</div>
