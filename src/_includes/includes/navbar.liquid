@@ -46,11 +46,9 @@
 				{% else %}
 					<a
 						class="navbar_link{% if link.slug == 'join' %} highlight{% endif %}"
-						href="/{% if link.slug != 'join' %}{% if link.slug == 'events' or link.slug == 'publications' %}{% if page.fileSlug == 'events' or page.fileSlug == 'publications' %}{% else %}#{% endif %}{% else %}#{% endif %}{% endif %}{{
+						href="/{% if link.slug != 'join' and link.slug != 'events' %}#{% endif %}{{
 							link.slug
-						}}"
-						{% if link.slug == 'events' or link.slug == 'projects' or link.slug == 'papers-we-love' %}onclick="alert('Under construction, coming soon'); return false"{% endif %}
-					>
+						}}">
 						{{ link.name }}
 					</a>
 				{% endif %}
