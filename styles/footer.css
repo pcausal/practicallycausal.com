@@ -43,6 +43,13 @@
 	opacity: 0.8;
 }
 
+.footer_powered-by {
+	margin-right: auto;
+	font-weight: 300;
+	opacity: 0.8;
+	color: white;
+}
+
 .footer_bottom-social {
 	margin-left: 20px;
 	color: rgba(255, 255, 255, 0.8);
