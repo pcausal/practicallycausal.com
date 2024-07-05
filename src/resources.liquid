@@ -1,0 +1,30 @@
+---
+title: Getting Started - Practically Causal
+styles:
+  - getting-started.css
+layout: layouts/base.liquid
+---
+
+<section class="getting_started">
+	<h1 class="getting_started_title">Getting Started</h1>
+	<div class="getting_started_content">
+		{% for resourceCategory in cms.learningResourceCategories %}
+		<h2 id="{{ resourceCategory.slug }}">{{ resourceCategory.name }}</h2>
+		{% for resource in resourceCategory.learningResources %} {% include
+		'includes/learning-resource.liquid', resource: resource %}
+		<!-- <div class="getting_started_item" id="{{ resource.slug }}">
+			<h3>{{ resource.title }}</h3>
+			{% if resource.description and resource.description.html.size > 7 %}
+			<div class="description">{{ resource.description.html }}</div>
+			{% endif %}
+			<p class="url">
+				<a href="{{ resource.url }}">{{ resource.url }}</a>
+			</p>
+			<p class="last_updated">Last updated at {{ resource.last_updated }}</p>
+			<p class="authors">
+				{% include 'includes/authors.liquid', authors: resource.authors %}
+			</p>
+		</div> -->
+		{% endfor %} {% endfor %}
+	</div>
+</section>

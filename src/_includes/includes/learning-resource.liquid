@@ -1,0 +1,14 @@
+<div class="learning_resource_item" id="learning_resource_{{ resource.slug }}">
+	<h3 class="publications_publication-title"><a href="{{ resource.url }}">
+		{{ resource.title }}</h3>
+	</a></h3>
+	{% if resource.lastUpdate %}
+	<p>Last updated {{ resource.lastUpdate | date }}</p>
+	{% endif %}
+	<p>Expertise level {{ resource.level }}</p>
+	{% if resource.description and resource.description.html.size > 7 %}<p>{{ resource.description.html }}</p
+	>{% endif %}
+	<p class="authors">
+		Author{% if resource.authors.size > 1 %}s{% endif %}: {% include 'includes/authors.liquid', authors: resource.authors %}
+	</p>
+</div>

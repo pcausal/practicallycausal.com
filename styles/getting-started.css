@@ -1,0 +1,59 @@
+.getting_started {
+	padding: 100px 240px;
+}
+.getting_started_title {
+	font-size: 52px;
+	font-weight: 700;
+	color: var(--black);
+}
+.getting_started_content h2 {
+	font-weight: unset;
+	font-size: x-large;
+	margin-top: 30px;
+}
+.getting_started_content {
+	margin-top: 60px;
+	line-height: 20px;
+}
+.getting_started_content .learning_resource_item {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-top: 32px;
+	padding: 35px;
+	overflow: hidden;
+	text-align: left;
+	background: white;
+	box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.075);
+	border-radius: 8px;
+}
+.getting_started_content .learning_resource_item::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 6px;
+	background: var(--extra-light-blue);
+}
+.getting_started_content .learning_resource_item h3 {
+	font-size: larger;
+}
+.getting_started_content .learning_resource_item .description,
+.getting_started_content .learning_resource_item .url,
+.getting_started_content .learning_resource_item .papers {
+	font-weight: 300;
+	margin-top: 10px;
+}
+.getting_started_content strong {
+	font-weight: 400;
+}
+.getting_started_content .learning_resource_item h3,
+.getting_started_content .learning_resource_item .description,
+.getting_started_content .learning_resource_item .papers,
+.getting_started_content .learning_resource_item .url {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 100%;
+}

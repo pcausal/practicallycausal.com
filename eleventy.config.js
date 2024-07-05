@@ -258,6 +258,25 @@ module.exports = function (config) {
 				title
 				url
 			}
+			learningResourceCategories {
+    			name
+				slug
+				learningResources {
+					title
+					slug
+					lastUpdate
+					level
+					description {
+						html
+						text
+					}
+					url
+					authors {
+						name
+						homepage
+					}
+				}
+			}
 		}`)
 	)
 
