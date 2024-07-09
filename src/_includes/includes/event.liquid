@@ -6,9 +6,9 @@
 	<div class="events_event-main">
 		<p class="events_event-title">{{ event.title }}</p>
 		<p class="events_event-topic">{{ event.topic }}</p>
-		<p class="events_event-hosts">{% include 'includes/authors.liquid', authors: event.hosts %}</p>
-		<div class="events_event-description">{{
+		{% if event.hosts and event.hosts.length > 0 %}<p class="events_event-hosts">{% include 'includes/authors.liquid', authors: event.hosts %}</p>{% endif %}
+		{% if event.details and event.details.html.size > 7 %}<div class="events_event-description preview">{{
 			event.details.html
-		}}</span>
+		}}</span></div>{% endif %}
 	</div>
 </div>
