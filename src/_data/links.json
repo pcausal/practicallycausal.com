@@ -1,26 +1,28 @@
 [
-	{ "name": "What We Do", "slug": "what-we-do" },
 	{
-		"name": "Who We Are",
 		"slug": "who-we-are",
+		"name": "People",
+		"href": "/people/",
 		"links": [
-			{ "name": "Leadership", "slug": "leadership" },
-			{ "name": "Researchers", "slug": "researchers" },
-			{ "name": "Faculty Affiliates", "slug": "faculty-affiliates" }
+			{ "name": "Leadership", "slug": "leadership", "href": "/people/#leadership" },
+			{ "name": "Researchers", "slug": "researchers", "href": "/people/#researchers" },
+			{
+				"name": "Faculty",
+				"slug": "faculty-affiliates",
+				"href": "/people/#faculty-affiliates"
+			},
+			{ "name": "Affiliates", "slug": "affiliates", "href": "/people/#affiliates" }
 		]
 	},
-	{ "name": "Publications", "slug": "publications" },
-	{
-		"name": "Learn Causology",
-		"slug": "learn",
-		"links": [
-			{ "name": "Resources", "slug": "resources" },
-			{ "name": "Courses", "slug": "courses" },
-			{ "name": "Software", "slug": "software" },
-			{ "name": "Training & Collaboration", "slug": "opportunities" }
-		]
-	},
-	{ "name": "Activities & Events", "slug": "events" },
-	{ "name": "Projects", "slug": "projects" },
-	{ "name": "Papers We Love", "slug": "papers-we-love" }
+	{ "slug": "what-we-do", "href": "/#what-we-do" },
+	{ "slug": "our-work", "href": "/#what-we-do" },
+	{ "slug": "projects", "href": "/projects/" },
+	{ "slug": "publications", "href": "/publications/" },
+	{ "slug": "learn", "href": "/resources/" },
+	{ "slug": "resources", "href": "/resources/" },
+	{ "slug": "software", "href": "/software/" },
+	{ "slug": "events", "href": "/events/" },
+	{ "slug": "activities-events", "href": "/events/" },
+	{ "slug": "join", "href": "/join/" },
+	{ "slug": "papers-we-love", "href": "/publications/" }
 ]

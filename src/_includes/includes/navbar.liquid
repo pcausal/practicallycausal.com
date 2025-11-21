@@ -18,26 +18,50 @@
 		</div>
 	</div>
 	<hr class="navbar_divider" />
+	{% assign navLinks = cms.website.navigationBar %}
+	{% assign navOverrides = links %}
 	<div class="navbar_main">
 		<div class="navbar_full">
-			{% for link in cms.website.navigationBar %}
-				{% if link.links.size > 0 %}
+			{% for link in navLinks %}
+				{% assign override = navOverrides | where: 'slug', link.slug | first %}
+				{% assign displayName = override.name | default: link.name %}
+				{% assign dropdownLinks = override.links | default: link.links %}
+				{% assign hasDropdown = dropdownLinks and dropdownLinks.size > 0 %}
+				{% assign href = override.href %}
+				{% if href == nil %}
+					{% assign href = '/#' | append: link.slug %}
+					{% if link.slug == 'join' %}
+						{% assign href = '/join/' %}
+					{% elsif link.slug == 'events' %}
+						{% assign href = '/events/' %}
+					{% endif %}
+				{% endif %}
+				{% if hasDropdown %}
 					<div class="navbar_dropdown">
-						<a class="navbar_dropdown-trigger" href="/#{{ link.slug }}">
-							{{ link.name }}
+						<a class="navbar_dropdown-trigger" href="{{ href }}">
+							{{ displayName }}
 							<img src="{{ cms.website.downIcon.url }}" />
 						</a>
 						<div class="navbar_dropdown-container">
 							<div class="navbar_dropdown-content">
-								{% for sublink in link.links %}
+								{% for sublink in dropdownLinks %}
+									{% assign subOverride = navOverrides | where: 'slug', sublink.slug | first %}
+									{% assign subName = sublink.name %}
+									{% assign subHref = sublink.href %}
+									{% if subOverride and subOverride.name %}
+										{% assign subName = subOverride.name %}
+									{% endif %}
+									{% if subOverride and subOverride.href %}
+										{% assign subHref = subOverride.href %}
+									{% endif %}
+									{% if subHref == nil %}
+										{% assign subHref = '/#' | append: sublink.slug %}
+									{% endif %}
 									<a
 										class="navbar_dropdown-link"
-										{% if sublink.slug == 'courses' or sublink.slug == 'opportunities' or sublink.slug == 'spotlight' %}
-											onclick="alert('Under construction, coming soon'); return false"
-										{% endif %}
-										href="/{% if sublink.slug != 'software' and sublink.slug != 'projects' and sublink.slug != 'resources' %}#{% endif %}{{ sublink.slug }}"
+										href="{{ subHref }}"
 									>
-										{{ sublink.name }}
+										{{ subName }}
 									</a>
 								{% endfor %}
 							</div>
@@ -46,10 +70,9 @@
 				{% else %}
 					<a
 						class="navbar_link{% if link.slug == 'join' %} highlight{% endif %}"
-						href="/{% if link.slug != 'join' and link.slug != 'events' %}#{% endif %}{{
-							link.slug
-						}}">
-						{{ link.name }}
+						href="{{ href }}"
+					>
+						{{ displayName }}
 					</a>
 				{% endif %}
 			{% endfor %}
@@ -57,24 +80,46 @@
 		<button class="navbar_menu-button" onclick="document.querySelector('.navbar_menu-toggle').classList.toggle('navbar_hidden')">Menu</button>
 	</div>
 	<div class="navbar_menu-toggle navbar_hidden">
-		{% for link in cms.website.navigationBar %}
-			{% if link.links.size > 0 %}
+		{% for link in navLinks %}
+			{% assign override = navOverrides | where: 'slug', link.slug | first %}
+			{% assign displayName = override.name | default: link.name %}
+			{% assign dropdownLinks = override.links | default: link.links %}
+			{% assign hasDropdown = dropdownLinks and dropdownLinks.size > 0 %}
+			{% assign href = override.href %}
+			{% if href == nil %}
+				{% assign href = '/#' | append: link.slug %}
+				{% if link.slug == 'join' %}
+					{% assign href = '/join/' %}
+				{% elsif link.slug == 'events' %}
+					{% assign href = '/events/' %}
+				{% endif %}
+			{% endif %}
+			{% if hasDropdown %}
 				<div class="navbar_dropdown">
-					<a class="navbar_dropdown-trigger" href="/#{{ link.slug }}">
-						{{ link.name }}
+					<a class="navbar_dropdown-trigger" href="{{ href }}">
+						{{ displayName }}
 						<img src="{{ cms.website.downIcon.url }}" />
 					</a>
 					<div class="navbar_dropdown-container">
 						<div class="navbar_dropdown-content">
-							{% for sublink in link.links %}
+							{% for sublink in dropdownLinks %}
+								{% assign subOverride = navOverrides | where: 'slug', sublink.slug | first %}
+								{% assign subName = sublink.name %}
+								{% assign subHref = sublink.href %}
+								{% if subOverride and subOverride.name %}
+									{% assign subName = subOverride.name %}
+								{% endif %}
+								{% if subOverride and subOverride.href %}
+									{% assign subHref = subOverride.href %}
+								{% endif %}
+								{% if subHref == nil %}
+									{% assign subHref = '/#' | append: sublink.slug %}
+								{% endif %}
 								<a
 									class="navbar_dropdown-link"
-									{% if link.slug =='learn' or sublink.slug == 'projects' or sublink.slug == 'spotlight' %}
-										onclick="alert('Under construction, coming soon'); return false"
-									{% endif %}
-									href="/#{{ sublink.slug }}"
+									href="{{ subHref }}"
 								>
-									{{ sublink.name }}
+									{{ subName }}
 								</a>
 							{% endfor %}
 						</div>
@@ -83,12 +128,9 @@
 			{% else %}
 				<a
 					class="navbar_link"
-					href="/{% if link.slug == 'events' or link.slug == 'publications' %}{% if page.fileSlug == 'events' or page.fileSlug == 'publications' %}{% else %}#{% endif %}{% else %}#{% endif %}{{
-						link.slug
-					}}"
-					{% if link.slug == 'events' or link.slug == 'projects' or link.slug == 'papers-we-love' %}onclick="alert('Under construction, coming soon'); return false"{% endif %}
+					href="{{ href }}"
 				>
-					{{ link.name }}
+					{{ displayName }}
 				</a>
 			{% endif %}
 		{% endfor %}

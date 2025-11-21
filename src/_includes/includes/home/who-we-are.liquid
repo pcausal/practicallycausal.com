@@ -1,14 +1,21 @@
+{% assign show_people_grid = page.fileSlug == 'people' %}
 <section class="home-who-we-are" id="who-we-are">
 	<h1 class="home-who-we-are_title">Who we are</h1>
 	<div class="home-who-we-are_body">
 		{{ cms.basic.whoWeAre.html }}
 	</div>
-	{% for role in roles %}
-	<h2 id="{{ role.slug }}">{{ role.plural }}</h2>
-	<div class="home-who-we-are_people">
-		{% assign leadership = cms.people | where: "role", role.name %} {% for
-		person in leadership %} {% include 'includes/home/profile.liquid' with
-		person %} {% endfor %}
-	</div>
-	{% endfor %}
+	{% if show_people_grid %}
+		{% for role in roles %}
+		<h2 id="{{ role.slug }}">{{ role.plural }}</h2>
+		<div class="home-who-we-are_people">
+			{% assign leadership = cms.people | where: "role", role.name %} {% for
+			person in leadership %} {% include 'includes/home/profile.liquid' with
+			person %} {% endfor %}
+		</div>
+		{% endfor %}
+	{% else %}
+		<p class="home-who-we-are_cta">
+			<a href="/people/">Meet our leadership, researchers, faculty, and affiliates →</a>
+		</p>
+	{% endif %}
 </section>

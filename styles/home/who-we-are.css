@@ -131,3 +131,19 @@
 	font-size: small;
 	text-align: left;
 }
+
+.home-who-we-are_cta {
+	margin-top: 40px;
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.home-who-we-are_cta a {
+	color: var(--light-blue);
+	text-decoration: none;
+}
+
+.home-who-we-are_cta a:hover,
+.home-who-we-are_cta a:focus {
+	text-decoration: underline;
+}
