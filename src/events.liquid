@@ -9,9 +9,23 @@ layout: layouts/base.liquid
 	<h1 class="events_title">Activities & Events</h1>
 	<div class="events_body">{{ cms.basic.events.html }}</div>
 	<div class="events_content">
-		<p class="events_date">{{ cms.events[0].date | year }}</p>
-		{% for event in cms.events %}{% include 'includes/event.liquid' with event
-		%}
-		{% endfor %}
+		{% if cms.events.size > 0 %}
+		<table class="events_table">
+			<thead>
+				<tr>
+					<th>Date</th>
+					<th>Title</th>
+					<th>Topic</th>
+					<th>Hosts</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for event in cms.events %}
+					{% include 'includes/event.liquid' with event %}
+				{% endfor %}
+			</tbody>
+		</table>
+		{% endif %}
 	</div>
 </section>

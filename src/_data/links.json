@@ -2,27 +2,24 @@
 	{
 		"slug": "who-we-are",
 		"name": "People",
-		"href": "/people/",
-		"links": [
-			{ "name": "Leadership", "slug": "leadership", "href": "/people/#leadership" },
-			{ "name": "Researchers", "slug": "researchers", "href": "/people/#researchers" },
-			{
-				"name": "Faculty",
-				"slug": "faculty-affiliates",
-				"href": "/people/#faculty-affiliates"
-			},
-			{ "name": "Affiliates", "slug": "affiliates", "href": "/people/#affiliates" }
-		]
+		"href": "/people/"
 	},
 	{ "slug": "what-we-do", "href": "/#what-we-do" },
 	{ "slug": "our-work", "href": "/#what-we-do" },
 	{ "slug": "projects", "href": "/projects/" },
 	{ "slug": "publications", "href": "/publications/" },
-	{ "slug": "learn", "href": "/resources/" },
+	{
+		"slug": "learn",
+		"href": "/resources/",
+		"links": [
+			{ "name": "Getting Started", "slug": "getting-started", "href": "/resources/" },
+			{ "name": "Our Software", "slug": "software", "href": "/software/" }
+		]
+	},
 	{ "slug": "resources", "href": "/resources/" },
 	{ "slug": "software", "href": "/software/" },
 	{ "slug": "events", "href": "/events/" },
 	{ "slug": "activities-events", "href": "/events/" },
-	{ "slug": "join", "href": "/join/" },
+	{ "slug": "join", "name": "Contact Us", "href": "/join/" },
 	{ "slug": "papers-we-love", "href": "/publications/" }
 ]

@@ -25,7 +25,11 @@
 			{% for link in navLinks %}
 				{% assign override = navOverrides | where: 'slug', link.slug | first %}
 				{% assign displayName = override.name | default: link.name %}
-				{% assign dropdownLinks = override.links | default: link.links %}
+				{% if override %}
+					{% assign dropdownLinks = override.links %}
+				{% else %}
+					{% assign dropdownLinks = link.links %}
+				{% endif %}
 				{% assign hasDropdown = dropdownLinks and dropdownLinks.size > 0 %}
 				{% assign href = override.href %}
 				{% if href == nil %}
@@ -38,10 +42,10 @@
 				{% endif %}
 				{% if hasDropdown %}
 					<div class="navbar_dropdown">
-						<a class="navbar_dropdown-trigger" href="{{ href }}">
+						<button class="navbar_dropdown-trigger" type="button">
 							{{ displayName }}
 							<img src="{{ cms.website.downIcon.url }}" />
-						</a>
+						</button>
 						<div class="navbar_dropdown-container">
 							<div class="navbar_dropdown-content">
 								{% for sublink in dropdownLinks %}
@@ -83,7 +87,11 @@
 		{% for link in navLinks %}
 			{% assign override = navOverrides | where: 'slug', link.slug | first %}
 			{% assign displayName = override.name | default: link.name %}
-			{% assign dropdownLinks = override.links | default: link.links %}
+			{% if override %}
+				{% assign dropdownLinks = override.links %}
+			{% else %}
+				{% assign dropdownLinks = link.links %}
+			{% endif %}
 			{% assign hasDropdown = dropdownLinks and dropdownLinks.size > 0 %}
 			{% assign href = override.href %}
 			{% if href == nil %}
@@ -96,10 +104,10 @@
 			{% endif %}
 			{% if hasDropdown %}
 				<div class="navbar_dropdown">
-					<a class="navbar_dropdown-trigger" href="{{ href }}">
+					<button class="navbar_dropdown-trigger" type="button">
 						{{ displayName }}
 						<img src="{{ cms.website.downIcon.url }}" />
-					</a>
+					</button>
 					<div class="navbar_dropdown-container">
 						<div class="navbar_dropdown-content">
 							{% for sublink in dropdownLinks %}

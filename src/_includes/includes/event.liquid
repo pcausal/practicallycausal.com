@@ -1,14 +1,23 @@
-<div class="events_event" href="/events/{{ event.slug }}" aria-disabled="true">
-	<div class="events_event-date">
+<tr class="events_event">
+	<td class="events_event-date">
 		<span class="events_event-month">{{ event.date | month }}</span>
 		<span class="events_event-day">{{ event.date | day }}</span>
-	</div>
-	<div class="events_event-main">
-		<p class="events_event-title">{{ event.title }}</p>
-		<p class="events_event-topic">{{ event.topic }}</p>
-		{% if event.hosts and event.hosts.length > 0 %}<p class="events_event-hosts">{% include 'includes/authors.liquid', authors: event.hosts %}</p>{% endif %}
-		{% if event.details and event.details.html.size > 7 %}<div class="events_event-description preview">{{
-			event.details.html
-		}}</span></div>{% endif %}
-	</div>
-</div>
+		<span class="events_event-year">{{ event.date | year }}</span>
+	</td>
+	<td class="events_event-title">{{ event.title }}</td>
+	<td class="events_event-topic">{{ event.topic }}</td>
+	<td class="events_event-hosts">
+		{% if event.hosts and event.hosts.length > 0 %}
+			{% include 'includes/authors.liquid', authors: event.hosts %}
+		{% else %}
+			—
+		{% endif %}
+	</td>
+	<td class="events_event-description">
+		{% if event.details and event.details.html.size > 7 %}
+			<div class="preview">{{ event.details.html }}</div>
+		{% else %}
+			—
+		{% endif %}
+	</td>
+</tr>
