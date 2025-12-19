@@ -9,7 +9,7 @@ layout: layouts/base.liquid
 	<h1 class="join_title">Join Us</h1>
 	<div class="join_content">
 		{% assign content = cms.basic.joinUs.html | replace: 'reach out to us', 'Collaborate' | replace: 'Reach out to us', 'Collaborate' | replace: 'Reach Out to Us', 'Collaborate' %}
-		{% assign content = content | replace: 'have a project you want to collaborate on', '<p class="join_placeholder">This is where our collaborate paragraph would go</p>have a project you want to collaborate on' | replace: 'Have a project you want to collaborate on', '<p class="join_placeholder">This is where our collaborate paragraph would go</p>Have a project you want to collaborate on' | replace: 'Have a Project You Want to Collaborate On', '<p class="join_placeholder">This is where our collaborate paragraph would go</p>Have a Project You Want to Collaborate On' %}
+		{% assign content = content | replace: '<p class="join_placeholder">This is where our collaborate paragraph would go</p>', '' %}
 		{{ content }}
 	</div>
 </section>

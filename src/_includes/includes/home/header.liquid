@@ -30,14 +30,39 @@
 				{% for collaborator in project.collaborators %}<a{% if collaborator.homepage %} href="{{ collaborator.homepage }}"{% endif %}>{{ collaborator.name }}</a
 				>{% unless forloop.last %}, {% endunless %}{% endfor %}
 			</p>
-			{% endif %} {% if project.description and project.description.html.size >
-			7 %}
-			<div class="description">{{ project.description.html }}</div>
-			{% endif %} {% if project.url %}
-			<p class="url">
-				<a href="{{ project.url }}">{{ project.url }}</a>
-			</p>
-			{% endif %} {% if project.softwares.size > 0 or project.links.size > 0 %}
+			{% endif %} {% if project.description and project.description.text.size > 0 %}
+			{% assign full_text = project.description.text | strip | replace: '(e.g.', '' | replace: '(e.g', '' | replace: '\n', ' ' | replace: '\r', ' ' | replace: '  ', ' ' %}
+			{% assign full_text = full_text | replace: ' We offer', ' We offer' | replace: '  We offer', ' We offer' %}
+			{% assign sentences = full_text | split: '.' %}
+			{% assign short_description = '' %}
+			{% assign sentence_count = sentences.size | minus: 1 %}
+			{% for sentence in sentences limit: sentence_count %}
+				{% assign sentence_stripped = sentence | strip %}
+				{% assign sentence_lower = sentence_stripped | downcase %}
+				{% unless sentence_lower contains 'we will pair' or sentence_lower contains 'we provide' %}
+					{% if short_description.size == 0 %}
+						{% assign short_description = sentence_stripped | append: '.' %}
+					{% else %}
+						{% assign short_description = short_description | append: ' ' | append: sentence_stripped | append: '.' %}
+					{% endif %}
+				{% endunless %}
+			{% endfor %}
+			{% if short_description.size == 0 %}
+				{% assign short_description = full_text | truncate: 300 %}
+			{% endif %}
+			<div class="description">{{ short_description }}</div>
+			{% endif %}
+			<div class="project_links">
+				{% if project.url %}
+				<a href="{{ project.url }}" class="project_link project_link-primary" target="_blank" rel="noopener noreferrer">
+					Project Website →
+				</a>
+				{% endif %}
+				<a href="/publications/" class="project_link project_link-secondary">
+					View Publications →
+				</a>
+			</div>
+			{% if project.softwares.size > 0 or project.links.size > 0 %}
 			<p class="links">
 				{% if project.softwares.size > 0 %}<strong>Software</strong>: {% for
 				software in project.softwares %}<a

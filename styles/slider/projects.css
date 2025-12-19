@@ -14,19 +14,52 @@ li.project .collaborators {
 }
 li.project .description {
 	margin-top: 10px;
+	margin-bottom: 16px;
+	line-height: 1.5;
+	font-weight: 300;
 }
 li.project .description,
-li.project .url,
 li.project .collaborators {
 	font-weight: 300;
 }
 li.project h3,
 li.project .description,
-li.project .collaborators,
-li.project .url {
+li.project .collaborators {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	width: 100%;
+}
+li.project .project_links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-top: 16px;
+	margin-bottom: 12px;
+}
+li.project .project_link {
+	display: inline-block;
+	padding: 8px 16px;
+	border-radius: 4px;
+	text-decoration: none;
+	font-size: 14px;
+	font-weight: 500;
+	transition: all 0.2s ease;
+}
+li.project .project_link-primary {
+	background: var(--light-blue);
+	color: white;
+}
+li.project .project_link-primary:hover {
+	background: var(--black);
+}
+li.project .project_link-secondary {
+	background: transparent;
+	color: var(--light-blue);
+	border: 1px solid var(--light-blue);
+}
+li.project .project_link-secondary:hover {
+	background: var(--light-blue);
+	color: white;
 }
 li.project .links {
 	margin-top: 12px;

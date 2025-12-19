@@ -20,6 +20,7 @@
 		"href": "/resources/",
 		"links": [
 			{ "name": "Getting Started", "slug": "getting-started", "href": "/resources/" },
+			{ "name": "Courses", "slug": "courses", "href": "/courses/" },
 			{ "name": "Our Software", "slug": "software", "href": "/software/" }
 		]
 	},
