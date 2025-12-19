@@ -5,7 +5,6 @@
 		<span class="events_event-year">{{ event.date | year }}</span>
 	</td>
 	<td class="events_event-title">{{ event.title }}</td>
-	<td class="events_event-topic">{{ event.topic }}</td>
 	<td class="events_event-hosts">
 		{% if event.hosts and event.hosts.length > 0 %}
 			{% include 'includes/authors.liquid', authors: event.hosts %}

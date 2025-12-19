@@ -92,13 +92,6 @@
 	color: var(--light-blue);
 }
 
-.events_event-topic {
-	text-transform: uppercase;
-	font-size: 12px;
-	color: var(--gray);
-	font-weight: 500;
-}
-
 .events_event-hosts {
 	font-size: 14px;
 	color: var(--gray);

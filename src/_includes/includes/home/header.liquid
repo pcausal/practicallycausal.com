@@ -16,6 +16,9 @@
 	<div class="splide__track">
 		<ul class="splide__list">
 			{% for project in cms.projects %}
+			{% assign project_title_lower = project.title | downcase %}
+			{% assign project_slug_lower = project.slug | downcase %}
+			{% unless project_title_lower contains 'award' or project_slug_lower contains 'award' %}
 			<li class="project splide__slide">{% if project.image %}<img
 				src="{{ project.image.url }}"
 				alt="{{ project.title }}"
@@ -49,6 +52,7 @@
 				>{% unless forloop.last %}, {% endunless %}{% endfor %}{% endif %}
 			</p>
 			{% endif %}</div></li>
+			{% endunless %}
 			{% endfor %}
 		</ul>
 	</div>
