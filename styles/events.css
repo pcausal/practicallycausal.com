@@ -96,23 +96,3 @@
 	font-size: 14px;
 	color: var(--gray);
 }
-
-.events_event-description {
-	line-height: 1.5;
-	font-weight: 300;
-	color: var(--gray);
-	font-size: 14px;
-	max-width: 400px;
-}
-
-.events_event-description p {
-	margin-top: 8px;
-}
-
-.events_event-description p:first-child {
-	margin-top: 0;
-}
-
-.events_event-description strong {
-	font-weight: bold;
-}

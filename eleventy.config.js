@@ -252,7 +252,7 @@ module.exports = function (config) {
             // Batch 3: Events
             console.log('  → Fetching events...');
             const batch3 = await dataFromCMS(`query {
-					events(orderBy: date_DESC) {
+					events(orderBy: date_DESC, first: 1000) {
 						date
 						title
 						topic
