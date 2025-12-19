@@ -48,26 +48,41 @@
 						</button>
 						<div class="navbar_dropdown-container">
 							<div class="navbar_dropdown-content">
-								{% for sublink in dropdownLinks %}
-									{% assign subOverride = navOverrides | where: 'slug', sublink.slug | first %}
-									{% assign subName = sublink.name %}
-									{% assign subHref = sublink.href %}
-									{% if subOverride and subOverride.name %}
-										{% assign subName = subOverride.name %}
-									{% endif %}
-									{% if subOverride and subOverride.href %}
-										{% assign subHref = subOverride.href %}
-									{% endif %}
-									{% if subHref == nil %}
-										{% assign subHref = '/#' | append: sublink.slug %}
-									{% endif %}
+								{% if displayName == 'Our Work' %}
 									<a
 										class="navbar_dropdown-link"
-										href="{{ subHref }}"
+										href="/projects/"
 									>
-										{{ subName }}
+										Projects
 									</a>
-								{% endfor %}
+									<a
+										class="navbar_dropdown-link"
+										href="/publications/"
+									>
+										Publications
+									</a>
+								{% else %}
+									{% for sublink in dropdownLinks %}
+										{% assign subOverride = navOverrides | where: 'slug', sublink.slug | first %}
+										{% assign subName = sublink.name %}
+										{% assign subHref = sublink.href %}
+										{% if subOverride and subOverride.name %}
+											{% assign subName = subOverride.name %}
+										{% endif %}
+										{% if subOverride and subOverride.href %}
+											{% assign subHref = subOverride.href %}
+										{% endif %}
+										{% if subHref == nil %}
+											{% assign subHref = '/#' | append: sublink.slug %}
+										{% endif %}
+										<a
+											class="navbar_dropdown-link"
+											href="{{ subHref }}"
+										>
+											{{ subName }}
+										</a>
+									{% endfor %}
+								{% endif %}
 							</div>
 						</div>
 					</div>
@@ -110,26 +125,41 @@
 					</button>
 					<div class="navbar_dropdown-container">
 						<div class="navbar_dropdown-content">
-							{% for sublink in dropdownLinks %}
-								{% assign subOverride = navOverrides | where: 'slug', sublink.slug | first %}
-								{% assign subName = sublink.name %}
-								{% assign subHref = sublink.href %}
-								{% if subOverride and subOverride.name %}
-									{% assign subName = subOverride.name %}
-								{% endif %}
-								{% if subOverride and subOverride.href %}
-									{% assign subHref = subOverride.href %}
-								{% endif %}
-								{% if subHref == nil %}
-									{% assign subHref = '/#' | append: sublink.slug %}
-								{% endif %}
+							{% if displayName == 'Our Work' %}
 								<a
 									class="navbar_dropdown-link"
-									href="{{ subHref }}"
+									href="/projects/"
 								>
-									{{ subName }}
+									Projects
 								</a>
-							{% endfor %}
+								<a
+									class="navbar_dropdown-link"
+									href="/publications/"
+								>
+									Publications
+								</a>
+							{% else %}
+								{% for sublink in dropdownLinks %}
+									{% assign subOverride = navOverrides | where: 'slug', sublink.slug | first %}
+									{% assign subName = sublink.name %}
+									{% assign subHref = sublink.href %}
+									{% if subOverride and subOverride.name %}
+										{% assign subName = subOverride.name %}
+									{% endif %}
+									{% if subOverride and subOverride.href %}
+										{% assign subHref = subOverride.href %}
+									{% endif %}
+									{% if subHref == nil %}
+										{% assign subHref = '/#' | append: sublink.slug %}
+									{% endif %}
+									<a
+										class="navbar_dropdown-link"
+										href="{{ subHref }}"
+									>
+										{{ subName }}
+									</a>
+								{% endfor %}
+							{% endif %}
 						</div>
 					</div>
 				</div>

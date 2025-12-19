@@ -5,7 +5,14 @@
 		"href": "/people/"
 	},
 	{ "slug": "what-we-do", "href": "/#what-we-do" },
-	{ "slug": "our-work", "href": "/#what-we-do" },
+	{
+		"slug": "our-work",
+		"href": "/#what-we-do",
+		"links": [
+			{ "name": "Projects", "slug": "projects", "href": "/projects/" },
+			{ "name": "Publications", "slug": "publications", "href": "/publications/" }
+		]
+	},
 	{ "slug": "projects", "href": "/projects/" },
 	{ "slug": "publications", "href": "/publications/" },
 	{
