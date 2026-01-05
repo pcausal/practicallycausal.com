@@ -273,7 +273,7 @@ module.exports = function (config) {
             // Batch 4: Papers
             console.log('  → Fetching papers...');
             const batch4 = await dataFromCMS(`query {
-					papers(orderBy: date_DESC, first:100) {
+					papers(orderBy: date_DESC, first:1000) {
 						date
 						title
 						slug

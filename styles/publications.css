@@ -29,7 +29,14 @@
 .publications_year {
 	text-align: left;
 	font-size: 24px;
+	font-weight: 600;
 	color: var(--black);
+	margin-top: 40px;
+	margin-bottom: 16px;
+}
+
+.publications_year:first-child {
+	margin-top: 0;
 }
 
 .publications_publication {

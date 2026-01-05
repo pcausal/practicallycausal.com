@@ -11,8 +11,14 @@ layout: layouts/base.liquid
 		{{ cms.basic.publications.html }}
 	</div>
 	<div class="publications_content">
-		<p class="publications_year">{{ cms.papers[0].date | year }}</p>
-		{% for paper in cms.papers %} {% include 'includes/paper.liquid' with paper
-		%} {% endfor %}
+		{% assign current_year = '' %}
+		{% for paper in cms.papers reversed %}
+			{% assign paper_year = paper.date | year %}
+			{% if current_year != paper_year %}
+				{% assign current_year = paper_year %}
+				<p class="publications_year">{{ current_year }}</p>
+			{% endif %}
+			{% include 'includes/paper.liquid' with paper %}
+		{% endfor %}
 	</div>
 </section>
