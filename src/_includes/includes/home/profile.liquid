@@ -1,10 +1,16 @@
 <div class="home-who-we-are_person">
 	<a {% if person.homepage %}href="{{ person.homepage }}" {% endif %}>
+		{% if person.photo and person.photo.url %}
 		<img
 			class="home-who-we-are_person-image"
 			src="{{ person.photo.url }}"
 			alt="{{ person.name }}"
 		/>
+		{% else %}
+		<span class="home-who-we-are_person-image-placeholder" aria-hidden="true">
+			{{ person.name | slice: 0, 1 | upcase }}
+		</span>
+		{% endif %}
 		<span class="home-who-we-are_person-name">{{ person.name }}</span></a
 	>
 	{% if person.title %}

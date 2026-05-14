@@ -110,6 +110,40 @@ const dataFromCMS = async (query, maxRetries = 5) => {
     throw new Error('Failed to fetch CMS data after all retries');
 };
 
+const fetchPeopleFromCMS = async () => {
+    const pageSize = 100;
+    const people = [];
+
+    while (true) {
+        const skip = people.length;
+        console.log(`  → Fetching people ${skip + 1}-${skip + pageSize}...`);
+        const data = await dataFromCMS(`query {
+					people(orderBy: role_ASC, first:${pageSize}, skip:${skip}) {
+						name
+						slug
+						photo {
+							url
+						}
+						title
+						school
+						role
+						homepage
+						biography {
+							html
+							text
+						}
+					}
+				}`);
+        const page = data?.people || [];
+
+        people.push(...page);
+
+        if (page.length < pageSize) {
+            return people;
+        }
+    }
+};
+
 module.exports = function (config) {
     config.addPassthroughCopy('images');
     config.addPassthroughCopy('styles');
@@ -303,24 +337,7 @@ module.exports = function (config) {
 				}`);
 
             // Batch 5: People
-            console.log('  → Fetching people...');
-            const batch5 = await dataFromCMS(`query {
-					people(orderBy: role_ASC, first:100) {
-						name
-						slug
-						photo {
-							url
-						}
-						title
-						school
-						role
-						homepage
-						biography {
-							html
-							text
-						}
-					}
-				}`);
+            const people = await fetchPeopleFromCMS();
 
             // Batch 6: Policy
             console.log('  → Fetching policy...');
@@ -422,7 +439,7 @@ module.exports = function (config) {
                 socialMedias: batch2?.socialMedias || [],
                 events: batch3?.events || [],
                 papers: batch4?.papers || [],
-                people: batch5?.people || [],
+                people,
                 policy: batch6?.policy || {},
                 softwares: batch7?.softwares || [],
                 links: batch8?.links || [],

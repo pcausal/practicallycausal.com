@@ -8,9 +8,7 @@
 		{% for role in roles %}
 		<h2 id="{{ role.slug }}">{{ role.plural }}</h2>
 		<div class="home-who-we-are_people">
-			{% assign leadership = cms.people | where: "role", role.name %} {% for
-			person in leadership %} {% include 'includes/home/profile.liquid' with
-			person %} {% endfor %}
+			{% assign people_in_role = cms.people | where: "role", role.name %} {% for person in people_in_role %} {% include 'includes/home/profile.liquid' with person %} {% endfor %}
 		</div>
 		{% endfor %}
 	{% else %}

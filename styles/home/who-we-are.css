@@ -97,14 +97,29 @@
 	cursor: revert;
 }
 
-.home-who-we-are_person-image {
+.home-who-we-are_person-image,
+.home-who-we-are_person-image-placeholder {
 	--dimension: 210px;
 
 	width: var(--dimension);
 	height: var(--dimension);
 	overflow: hidden;
-	object-fit: cover;
 	border-radius: 50%;
+}
+
+.home-who-we-are_person-image {
+	object-fit: cover;
+}
+
+.home-who-we-are_person-image-placeholder {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid rgba(42, 111, 219, 0.18);
+	background: var(--extra-extra-light-blue);
+	color: var(--dark-blue);
+	font-size: 72px;
+	font-weight: 600;
 }
 
 .home-who-we-are_person-name {
